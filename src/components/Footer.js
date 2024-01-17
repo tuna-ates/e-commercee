@@ -1,6 +1,7 @@
 const Footer=()=>{
     return <div>
         burası Footer
+        
     </div>
     
     }
