@@ -7,11 +7,11 @@ const Header = () => {
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
 
- 
 
   return (
-    <div className=" flex w-[100vw] flex-col ">
-      <div className="darkHeader bg-[#252B42] flex justify-between w-[100%] py-3 px-6">
+    <div className=" flex  flex-col " >
+      <div className="darkHeader bg-[#252B42]  w-[100%] py-3 flex justify-between px-8">
+       
         <div className=" text-white flex items-center gap-4  ">
           <div className=" text-white flex items-center gap-1 ">
             <div>
@@ -44,9 +44,12 @@ const Header = () => {
             className=" cursor-pointer hover:text-lg"
           />
         </div>
+        
+
+
       </div>
 
-      <div className="flex w-[100%] justify-between items-center py-4 px-6 ">
+      <div className="flex w-[100%] justify-between items-center py-4 px-8 " >
         <div className="flex justify-start "><p className="text-[#252B42] text-2xl font-bold w-[20%] ">Bandage</p></div>
         <div className="flex justify-between w-[80%]  ">
           <div className="flex gap-4 text-sm text-[#737373] font-bold items-center ">
@@ -87,6 +90,10 @@ const Header = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="w-[100%] flex flex-wrap">
+    
       </div>
     </div>
   );
