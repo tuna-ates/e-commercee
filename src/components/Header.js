@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import { useState } from "react";
-import MainDropdown from "../auxiliary_component/MainDropdown";
+import MainDropdown from "../detail_components/MainDropdown";
 
 
 const Header = () => {
