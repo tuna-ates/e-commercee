@@ -2,7 +2,7 @@
 import { Icon } from "@iconify/react";
 const Footer=()=>{
     return <div className=" flex flex-col py-7 justify-center items-center">
-        <div className="w-[80%]">
+        <div className="w-[90%]">
         <div className="flex justify-between py-5">
           <h3 className="text-[24px] font-bold text-[#252B42]">Bandage</h3>
           <div className="flex gap-5 ">
@@ -21,7 +21,7 @@ const Footer=()=>{
           </div>
         </div>
         </div>
-        <div className="flex gap-8 items-center justify-between w-[80%] py-6">
+        <div className="flex gap-8 items-center justify-between w-[90%] py-6">
             <div className="flex flex-col gap-2">
                 <p className="font-bold pb-2">Company Info</p>
                 <p className="text-[#737373] font-bold">About Us</p>
@@ -59,7 +59,7 @@ const Footer=()=>{
             <div><p className="text-[#737373] font-bold">Lorem imp sum dolor Amit</p></div>
             </div>
         </div>
-        <div className="w-[80%] flex justify-between items-center py-6"><p className="text-[#737373] font-bold">Made With Love By Figmaland All Right Reserved </p></div>
+        <div className="w-[90%] flex justify-between items-center py-6"><p className="text-[#737373] font-bold">Made With Love By Figmaland All Right Reserved </p></div>
         
     </div>
     

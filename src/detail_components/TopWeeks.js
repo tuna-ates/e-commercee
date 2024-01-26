@@ -3,7 +3,7 @@ const TopWeeks = () => {
 
     return (
         <div className="w-[100%] flex items-center justify-center h-[70vh] " >
-            <div className=" flex gap-3 w-[70%] h-[100%]  ">
+            <div className=" flex gap-3 w-[80%] h-[100%]  ">
                 <div className=" flex-1 flex items-end justify-start  " style={{ backgroundImage: "url(" + "./img/topWeek1.jpg" + ")" }}>
                     <div className=" py-5  flex items-center justify-center  flex-col gap-2 bg-[#2D8BC0BF]  w-[60%] h-[40%] hover:w-[100%] hover:h-[100%]">
                         <p className="w-[60%] font-bold text-white mr-3">Top Product Of the Week </p>

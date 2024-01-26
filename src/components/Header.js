@@ -53,8 +53,8 @@ const Header = () => {
         <div className="flex justify-start "><p className="text-[#252B42] text-2xl font-bold w-[20%] ">Bandage</p></div>
         <div className="flex justify-between w-[80%]  ">
           <div className="flex gap-4 text-sm text-[#737373] font-bold items-center ">
-            <a>Home</a>
-            <a className="flex items-center gap-1">
+            <a href="/">Home</a>
+            <a href="/productList" className="flex items-center gap-1">
               Shop
 
               <div className="dropdown flex flex-col">
