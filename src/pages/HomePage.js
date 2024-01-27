@@ -5,11 +5,15 @@ import ProductCards from "../card_components/ProductCards";
 import Featured from "../detail_components/Featured";
 import Services from "../detail_components/Services";
 import FeaturedPosts from "../detail_components/FeaturedPosts";
+import CarouselComponent from "../detail_components/CarouselComponent";
+import CarouselComponent2 from "../detail_components/CarouselComponent2";
+
 
 const HomePage = () => {
   return (
     <>
-      <Hero />
+    <CarouselComponent2/>
+
       <Brands />
       <TopWeeks />
 
