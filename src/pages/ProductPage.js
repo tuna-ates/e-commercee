@@ -6,29 +6,11 @@ import { Icon } from "@iconify/react";
 
 
 import ProductSlider from "../Slider/ProductSlider";
+import ProductCards from "../card_components/ProductCards";
+import Brands from "../detail_components/Brands";
 
 const ProductPage = (props) => {
     const [data, setData] = useState(FakeData.products[0]);
-
-    const settings = {
-        customPaging: function (i) {
-            return (
-
-                <a>
-                    <img className="" src={data.img[0]} />
-                </a>
-
-            );
-        },
-        dots: true,
-        dotsClass: "slick-dots slick-thumb  ",
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-
-
-    };
 
 
     return (
@@ -102,6 +84,77 @@ const ProductPage = (props) => {
 
 
                     </div>
+                </div>
+            </div>
+
+            <div className=" flex flex-col w-[100%] justify-center items-center">
+                <div className=" flex gap-8 items-center justify-center pt-6">
+                    <p className=" text-[#737373] text-sm">Description</p>
+                    <p className=" text-[#737373] text-sm">Additional Information</p>
+                    <p className=" text-[#737373] text-sm">Reviews<span className="text-[#23856D]">(0)</span></p>
+                </div>
+                <div className=" flex w-[70%] gap-3 my-10">
+                    <div className=" flex-1">
+                        <img src="/img/unsplash.png " />
+                    </div>
+
+                    <div className=" flex flex-1 flex-col gap-5">
+                        <p className=" font-bold text-[#252B42] text-2xl">the quick fox jumps over </p>
+                        <p className=" text-sm text-[#737373] ">Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.</p>
+                        <p className=" text-sm text-[#737373] ">Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.</p>
+                        <p className=" text-sm text-[#737373] ">Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.</p>
+                    </div>
+                    <div className=" flex flex-1 gap-7 flex-col">
+
+                        <div className=" flex flex-col gap-2">
+                            <p className=" mb-3 font-bold text-[#252B42] text-2xl">the quick fox jumps over </p>
+                            <div className=" items-center flex gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="none" stroke="black" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="m10 17l5-5l-5-5"></path></svg>
+                                <p className=" text-sm text-[#737373] ">the quick fox jumps over the lazy dog</p>
+                            </div>
+                            <div className=" items-center flex gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="none" stroke="black" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="m10 17l5-5l-5-5"></path></svg>
+                                <p className=" text-sm text-[#737373] ">the quick fox jumps over the lazy dog</p>
+                            </div>
+                            <div className=" items-center flex gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="none" stroke="black" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="m10 17l5-5l-5-5"></path></svg>
+                                <p className=" text-sm text-[#737373] ">the quick fox jumps over the lazy dog</p>
+                            </div>
+                            <div className=" items-center flex gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="none" stroke="black" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="m10 17l5-5l-5-5"></path></svg>
+                                <p className=" text-sm text-[#737373] ">the quick fox jumps over the lazy dog</p>
+                            </div>
+                        </div>
+
+                        <div className=" flex flex-col gap-2">
+                            <p className=" mb-3 font-bold text-[#252B42] text-2xl">the quick fox jumps over </p>
+                            <div className=" items-center flex gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="none" stroke="black" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="m10 17l5-5l-5-5"></path></svg>
+                                <p className=" text-sm text-[#737373] ">the quick fox jumps over the lazy dog</p>
+                            </div>
+                            <div className=" items-center flex gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="none" stroke="black" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="m10 17l5-5l-5-5"></path></svg>
+                                <p className=" text-sm text-[#737373] ">the quick fox jumps over the lazy dog</p>
+                            </div>
+                            <div className=" items-center flex gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="none" stroke="black" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="m10 17l5-5l-5-5"></path></svg>
+                                <p className=" text-sm text-[#737373] ">the quick fox jumps over the lazy dog</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+            <div className="flex flex-col w-[100%] justify-center items-center gap-5 mt-10 bg-[#FAFAFA]">
+                <div className="text-[#252B42] text-2xl w-[70%] border-b-2 pb-4 justify-around"><p>BESTSELLER PRODUCTS</p></div>
+                <div className="flex justify-center items-center w-[80%] ">
+                    <ProductCards/>
+                </div>
+            </div>
+            <div className="flex flex-col w-[100%] justify-center items-center gap-5 bg-[#FAFAFA]">
+                <div className="w-[70%]">
+                    <Brands/>
                 </div>
             </div>
         </div>
