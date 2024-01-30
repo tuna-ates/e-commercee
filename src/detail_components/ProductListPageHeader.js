@@ -1,5 +1,5 @@
 const ProductListPageHeader=()=>{
-return(<div className=" flex flex-col w-[100%] items-center justify-center py-10">
+return(<div className=" flex flex-col w-[100%] items-center justify-center py-10 bg-[#FAFAFA]">
 
 <div className=" flex w-[80%] items-center justify-between">
     <p className='text-[#252B42] font-bold text-2xl '>Shop</p>

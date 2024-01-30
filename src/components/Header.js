@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 import MainDropdown from "../detail_components/MainDropdown";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 
 const Header = () => {
@@ -53,9 +54,9 @@ const Header = () => {
         <div className="flex justify-start "><p className="text-[#252B42] text-2xl font-bold w-[20%] ">Bandage</p></div>
         <div className="flex justify-between w-[80%]  ">
           <div className="flex gap-4 text-sm text-[#737373] font-bold items-center ">
-            <a href="/">Home</a>
-            <a href="/productList" className="flex items-center gap-1">
-              Shop
+            <a ><NavLink className="nav-link" to="/" exact>Home</NavLink></a>
+            <a  className="flex items-center gap-1">
+            <NavLink className="nav-link" to="/productList" exact>Shop</NavLink>
 
               <div className="dropdown flex flex-col">
               <MainDropdown show={show} setShow={setShow} show1={show1} setShow1={setShow1}/>

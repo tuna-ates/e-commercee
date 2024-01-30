@@ -18,7 +18,7 @@ const CarouselComponent2 = () => {
         background: "rgba(226, 217, 221, 0.7)",
         border: '0px',
 
-        margin: "70px"
+      
     };
 
     const properties = {
@@ -26,6 +26,8 @@ const CarouselComponent2 = () => {
         nextArrow: <button style={{ ...buttonStyle, fontWeight: "lighter", borderRadius: "25px" }}><svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="1.5rem" color="rgba(0,0,0,0.6)" viewBox="0 0 15 15"><path fill="currentColor" d="M12 7.5L4 0v15z"></path></svg></button>
     }
     return (
+        <div className=" w-[100%] flex justify-center items-center">
+        <div className="w-[80%]  ">
 
         <Slide {...properties} >
 
@@ -67,10 +69,11 @@ const CarouselComponent2 = () => {
                     <img src={`./img/Ellipse26.png`} className=" w-[35%] absolute top-[-20px] right-0 " />
                 </div>
             </div>
-
+          
 
         </Slide>
-
+        </div>
+        </div>
     );
 };
 export default CarouselComponent2;

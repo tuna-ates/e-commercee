@@ -70,99 +70,151 @@ export const FakeData = {
       ],
       products: [
             {
-                  img: "./img/product.png",
+                  id:1,
+                  img: ["/img/product.png",
+                  "/img/featured1.png",
+                  "/img/featured2.png",
+                  
+            ],
                   title: "Graphic Desing",
                   about: "English Department",
                   price1: "$16.86",
-                  price2: "$6.54"
+                  price2: "$6.54",
+                  stars:"/img/stars.png",
+                  description:"Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
+                  colorProduct:"/img/denProduct.png"
+                  
+                
 
             },
             {
-                  img: "./img/product.png",
+                  id:2,
+                  img: ["/img/product.png"],
                   title: "Graphic Desing",
                   about: "English Department",
                   price1: "$16.86",
-                  price2: "$6.54"
+                  price2: "$6.54",
+                  stars:"/img/stars.png",
+                  description:"Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
+                  colorProduct:"/img/denProduct.png"
 
             },
             {
-                  img: "./img/product.png",
+                  id:3,
+                  img: ["/img/product.png"],
                   title: "Graphic Desing",
                   about: "English Department",
                   price1: "$16.86",
-                  price2: "$6.54"
+                  price2: "$6.54",
+                  stars:"/img/stars.png",
+                  description:"Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
+                  colorProduct:"/img/denProduct.png"
 
             },
             {
-                  img: "./img/product.png",
+                  id:4,
+                  img: ["/img/product.png"],
                   title: "Graphic Desing",
                   about: "English Department",
                   price1: "$16.86",
-                  price2: "$6.54"
+                  price2: "$6.54",
+                  stars:"/img/stars.png",
+                  description:"Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
+                  colorProduct:"/img/denProduct.png"
 
             },
             {
-                  img: "./img/product.png",
+                  id:5,
+                  img: ["/img/product.png"],
                   title: "Graphic Desing",
                   about: "English Department",
                   price1: "$16.86",
-                  price2: "$6.54"
+                  price2: "$6.54",
+                  stars:"/img/stars.png",
+                  description:"Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
+                  colorProduct:"/img/denProduct.png"
 
             },
             {
-                  img: "./img/product.png",
+                  id:6,
+                  img: ["/img/product.png"],
                   title: "Graphic Desing",
                   about: "English Department",
                   price1: "$16.86",
-                  price2: "$6.54"
+                  price2: "$6.54",
+                  stars:"/img/stars.png",
+                  description:"Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
+                  colorProduct:"/img/denProduct.png"
 
             },
             {
-                  img: "./img/product.png",
+                  id:7,
+                  img: ["/img/product.png"],
                   title: "Graphic Desing",
                   about: "English Department",
                   price1: "$16.86",
-                  price2: "$6.54"
+                  price2: "$6.54",
+                  stars:"/img/stars.png",
+                  description:"Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
+                  colorProduct:"/img/denProduct.png"
 
             },
             {
-                  img: "./img/product.png",
+                  id:8,
+                  img: ["/img/product.png"],
                   title: "Graphic Desing",
                   about: "English Department",
                   price1: "$16.86",
-                  price2: "$6.54"
+                  price2: "$6.54",
+                  stars:"/img/stars.png",
+                  description:"Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
+                  colorProduct:"/img/denProduct.png"
 
             },
             {
-                  img: "./img/product.png",
+                  id:9,
+                  img: ["/img/product.png"],
                   title: "Graphic Desing",
                   about: "English Department",
                   price1: "$16.86",
-                  price2: "$6.54"
+                  price2: "$6.54",
+                  stars:"/img/stars.png",
+                  description:"Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
+                  colorProduct:"/img/denProduct.png"
 
             },
             {
-                  img: "./img/product.png",
+                  id:10,
+                  img: ["/img/product.png"],
                   title: "Graphic Desing",
                   about: "English Department",
                   price1: "$16.86",
-                  price2: "$6.54"
-
+                  price2: "$6.54",
+                  stars:"/img/stars.png",
+                  description:"Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
+                  colorProduct:"/img/denProduct.png"
             },
             {
-                  img: "./img/product.png",
+                  id:11,
+                  img: ["/img/product.png"],
                   title: "Graphic Desing",
                   about: "English Department",
                   price1: "$16.86",
-                  price2: "$6.54"
-
+                  price2: "$6.54",
+                  stars:"/img/stars.png",
+                  description:"Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
+                  colorProduct:"/img/denProduct.png"
             },
             {
-                  img: "./img/product.png",
+                  id:12,
+                  img: ["/img/product.png"],
                   title: "Graphic Desing",
                   about: "English Department",
                   price1: "$16.86",
-                  price2: "$6.54"
+                  price2: "$6.54",
+                  stars:"/img/stars.png",
+                  description:"Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
+                  colorProduct:"/img/denProduct.png"
 
             },
 
