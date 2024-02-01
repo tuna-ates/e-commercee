@@ -5,6 +5,7 @@ import HomePage from "../pages/HomePage";
 import { Route } from "react-router-dom";
 import ProductListPage from "../pages/ProductListPage";
 import ProductPage from "../pages/ProductPage";
+import AboutPage from "../pages/AboutPage";
 
 
 const PageContent=()=>{
@@ -21,6 +22,9 @@ const PageContent=()=>{
     </Route>
     <Route path="/productList/:productId" exact>
         <ProductPage/>
+    </Route>
+    <Route path="/about" exact>
+        <AboutPage/>
     </Route>
     <Route path="*" exact>
         <h1>404 Sayfa Bulunamdı</h1>

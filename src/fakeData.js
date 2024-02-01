@@ -68,6 +68,23 @@ export const FakeData = {
             }
 
       ],
+      team:[
+           {
+            img:"./img/team1.jpg",
+            userName:"Username",
+            level:"Profession"
+           },
+           {
+            img:"./img/team1.jpg",
+            userName:"Username",
+            level:"Profession"
+           },
+           {
+            img:"./img/team1.jpg",
+            userName:"Username",
+            level:"Profession"
+           },
+      ],
       products: [
             {
                   id:1,

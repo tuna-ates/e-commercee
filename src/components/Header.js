@@ -63,7 +63,7 @@ const Header = () => {
                 
               </div>
             </a>
-            <a>About</a>
+            <a><NavLink className="nav-link" to="/about" exact>About</NavLink></a>
             <a>Blog</a>
             <a>Contact</a>
             <a>Pages</a>
