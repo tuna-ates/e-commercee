@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <div className=" flex  flex-col " >
       <div className="darkHeader bg-[#252B42]  w-[100%] py-3 flex justify-between px-8">
-       
+
         <div className=" text-white flex items-center gap-4  ">
           <div className=" text-white flex items-center gap-1 ">
             <div>
@@ -45,7 +45,7 @@ const Header = () => {
             className=" cursor-pointer hover:text-lg"
           />
         </div>
-        
+
 
 
       </div>
@@ -55,18 +55,18 @@ const Header = () => {
         <div className="flex justify-between w-[80%]  ">
           <div className="flex gap-4 text-sm text-[#737373] font-bold items-center ">
             <a ><NavLink className="nav-link" to="/" exact>Home</NavLink></a>
-            <a  className="flex items-center gap-1">
-            <NavLink className="nav-link" to="/productList" exact>Shop</NavLink>
+            <a className="flex items-center gap-1">
+              <NavLink className="nav-link" to="/productList" exact>Shop</NavLink>
 
               <div className="dropdown flex flex-col">
-              <MainDropdown show={show} setShow={setShow} show1={show1} setShow1={setShow1}/>
-                
+                <MainDropdown show={show} setShow={setShow} show1={show1} setShow1={setShow1} />
+
               </div>
             </a>
             <a><NavLink className="nav-link" to="/about" exact>About</NavLink></a>
             <a>Blog</a>
-            <a>Contact</a>
-            <a>Pages</a>
+            <a><NavLink className="nav-link" to="/contact" exact>Contact</NavLink></a>
+            <a><NavLink className="nav-link" to="/team" exact>Team</NavLink></a>
           </div>
           <div className="flex justify-end gap-4 w-[25%]">
             <div className="flex items-center text-[#23A6F0] text-sm font-bold gap-1">
@@ -94,7 +94,7 @@ const Header = () => {
       </div>
 
       <div className="w-[100%] flex flex-wrap">
-    
+
       </div>
     </div>
   );

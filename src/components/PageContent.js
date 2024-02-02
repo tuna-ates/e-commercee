@@ -6,6 +6,8 @@ import { Route } from "react-router-dom";
 import ProductListPage from "../pages/ProductListPage";
 import ProductPage from "../pages/ProductPage";
 import AboutPage from "../pages/AboutPage";
+import Team from "../pages/Team";
+import ContactPage from "../pages/ContactPage";
 
 
 const PageContent=()=>{
@@ -25,6 +27,12 @@ const PageContent=()=>{
     </Route>
     <Route path="/about" exact>
         <AboutPage/>
+    </Route>
+    <Route path="/team" exact>
+        <Team/>
+    </Route>
+    <Route path="/contact" exact>
+        <ContactPage/>
     </Route>
     <Route path="*" exact>
         <h1>404 Sayfa Bulunamdı</h1>
