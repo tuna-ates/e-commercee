@@ -4,9 +4,9 @@ const FeaturedPost=(props)=>{
 const {item}=props;
 
 return(
-    <div className=" relative flex">
-         <img className=" w-[40%]" src={item.img}/>
-         <div className=" flex flex-col gap-3 w-[60%]  px-12 justify-start py-6">
+    <div className=" relative flex ozel:flex-col ozel:justify-center ozel:items-center">
+         <img className=" w-[40%] ozel:w-[85%] ozel:h-[30rem]" src={item.img}/>
+         <div className=" flex flex-col gap-3 w-[60%] ozel:w-[90%]  px-12 justify-start py-6">
             <p className=" text-[#23A6F0] font-bold">{item.title1}</p>
             <p className=" text-lg font-extrabold">{item.title2}</p>
             <p className="text-[#737373]">{item.about1}</p>
@@ -38,7 +38,7 @@ return(
 
             </div>
 
-            <button className=" w-[70%] font-bold mt-7 hover:opacity-50 py-3 px-8 text-[#23A6F0] border-solid rounded-3xl border-2 border-[#23A6F0]">LOAD MORE  </button>
+            <button className=" w-[70%] ozel:w-[90%] font-bold mt-7 hover:opacity-50 py-3 px-8 text-[#23A6F0] border-solid rounded-3xl border-2 border-[#23A6F0] ozel:text-sm">LOAD MORE  </button>
          </div>
     </div>
 )

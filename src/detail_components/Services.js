@@ -8,7 +8,7 @@ return(
                 <p className="text-[#737373]">Problems trying to resolve the conflict between </p>
             </div>
 
-            <div className=" flex gap-8 w-[60%] py-6">
+            <div className=" flex gap-8 w-[60%] py-6 ozel:flex-col">
                 <div className=" flex flex-col gap-3 flex-1 items-center justify-start hover:scale-[1.1] cursor-pointer">
                     <img src="./img/services1.svg"/>
                     <p className=" font-black text-2xl">Easy Wins</p>

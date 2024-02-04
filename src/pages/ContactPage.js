@@ -68,7 +68,7 @@ const ContactPage = () => {
                         <button className=" text-[#23A6F0] border-solid border-[#23A6F0] border-[1px] rounded-2xl py-3 px-5 cursor-pointer">Submit Request</button>
                     </div>
                     <div className=" flex-1 flex flex-col gap-3 items-center justify-center py-20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="5rem" height="5rem" viewBox="0 0 20 20" ><g fill="#23A6F0" fillRule="evenodd" clipRule="evenodd"><path d="M17 3.5H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-11a1 1 0 0 0-1-1m-13 11v-9h12v9z"></path><path d="m17.648 5.261l-7.045 6a1 1 0 0 1-1.301-.004l-6.955-6C1.645 4.652 2.073 3.5 3 3.5h14c.93 0 1.356 1.158.648 1.761M5.69 5.5l4.27 3.683L14.282 5.5z"></path></g></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="5rem" height="5rem" viewBox="0 0 20 20" ><g fill="#23A6F0" fillRule="evenodd" clipRule="evenodd"><path d="M17 3.5H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-11a1 1 0 0 0-1-1m-13 11v-9h12v9z"></path><path d="m17.648 5.261l-7.045 6a1 1 0 0 1-1.301-.004l-6.955-6C1.645 4.652 2.073 3.5 3 3.5h14c.93 0 1.356 1.158.648 1.761M5.69 5.5l4.27 3.683L14.282 5.5z"></path></g></svg>
                         <div className=" flex flex-col gap-1">
                             <p className=" text-sm font-bold text-[#252B42]">georgia.young@example.com</p>
                             <p className=" text-sm font-bold text-[#252B42]">georgia.young@ple.com</p>
@@ -80,8 +80,8 @@ const ContactPage = () => {
 
             </div>
             <div className=" flex w-[100%] justify-center items-center flex-col my-10">
-            <svg xmlns="http://www.w3.org/2000/svg" width="5rem" height="4rem" viewBox="0 0 14 14" ><path fill="none" stroke="#4faee5" strokeLinecap="round" strokeLinejoin="round" d="m4 6.5l3 3l3-3m-3-6v9m-3.5 4h7"></path></svg>
-            <div className=" flex flex-col gap-5 items-center justify-center w-[80%] py-10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="5rem" height="4rem" viewBox="0 0 14 14" ><path fill="none" stroke="#4faee5" strokeLinecap="round" strokeLinejoin="round" d="m4 6.5l3 3l3-3m-3-6v9m-3.5 4h7"></path></svg>
+                <div className=" flex flex-col gap-5 items-center justify-center w-[80%] py-10">
                     <p className=" text-sm font-bold text-[#252B42] ">WE Can't WAIT TO MEET YOU</p>
                     <div className=" flex gap-3 flex-col items-center justify-center">
                         <p className=" text-[40px] text-[#252B42] font-bold ">Let’s Talk</p>

@@ -10,7 +10,7 @@ const FeaturedPosts=()=>{
                 <p className="text-[#23A6F0] text-xl">Practice Advice</p>
                 <p className=" font-bold text-[#252B42] text-4xl">Featured Posts</p>
             </div>
-            <div className=" flex gap-2 w-[90%]">
+            <div className=" flex gap-2 w-[90%] ozel:flex-col ozel:w-[70%]">
               {featuredPostData.map((item)=>{
                 return <FeaturedPost item={item}/>
               })}

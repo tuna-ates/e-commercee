@@ -5,7 +5,7 @@ const ProductCards = () => {
     const [data, setData] = useState(FakeData.products)
     return (
            
-            <div className="flex gap-9 flex-wrap w-[90%] justify-center">
+            <div className="flex gap-9 flex-wrap w-[90%] justify-center ozel:flex-col">
                 {data.map((item) => {
                     return <>
 
