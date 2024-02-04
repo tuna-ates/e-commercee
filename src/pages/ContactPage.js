@@ -4,11 +4,11 @@ const ContactPage = () => {
     return (
         <div className=" w-[100%] flex flex-col justify-center items-center">
             <div className=" w-[100%] flex items-center justify-center my-5 px-6">
-                <div className=" overflow-visible  relative flex   w-[95%] rounded-xl items-center justify-center  ">
+                <div className=" overflow-visible  relative flex   w-[95%] rounded-xl items-center justify-center ozel:flex-col ozel:w-[88%]  ">
 
-                    <div className="flex flex-col flex-1 pl-[50px] gap-4">
+                    <div className="flex flex-col flex-1 pl-[50px] gap-4 ozel:text-center ozel:items-center">
                         <p className="text-[#252B42] font-extrabold text-xl">CONTACT US</p>
-                        <p className=" text-[#252B42] w-[70%] font-[900] text-[64px]">Get in touch today!</p>
+                        <p className=" text-[#252B42] w-[70%] font-[900] text-[64px] ozel:text-[35px]">Get in touch today!</p>
                         <p className="text-[#737373] w-[55%] font-[500]" >We know how large objects will act,but things on a small scale.</p>
                         <p className=" text-2xl font-bold text-[#252B42] ">Phone ; +451 215 215 </p>
                         <p className=" text-2xl font-bold text-[#252B42] ">Fax : +451 215 215 </p>
@@ -39,7 +39,7 @@ const ContactPage = () => {
                 </div>
             </div>
             <div className=" w-[100%] flex flex-col gap-8 justify-center items-center my-20">
-                <div className=" flex flex-col gap-5 items-center justify-center w-[80%] py-20">
+                <div className=" flex flex-col gap-5 items-center justify-center w-[80%] py-20 ozel:items-center ozel:text-center">
                     <p className=" text-sm font-bold text-[#252B42] ">VISIT OUR OFFICE</p>
                     <div className=" flex gap-1 flex-col items-center justify-center">
                         <p className=" text-[40px] text-[#252B42] font-bold ">We help small businesses</p>
@@ -48,7 +48,7 @@ const ContactPage = () => {
                     </div>
 
                 </div>
-                <div className=" w-[70%] flex ">
+                <div className=" w-[70%] flex ozel:flex-col ">
                     <div className=" flex-1 flex flex-col gap-3 items-center justify-center py-20">
                         <svg xmlns="http://www.w3.org/2000/svg" width="5rem" height="5rem" viewBox="0 0 16 16" ><path fill="none" stroke="#23A6F0" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M1.75 1.75c0 8.5 4 12.5 12.5 12.5v-4l-3.5-1l-1 1.5c-2 0-4.5-2.5-4.5-4.5l1.5-1l-1-3.5z"></path></svg>
                         <div className=" flex flex-col gap-1">

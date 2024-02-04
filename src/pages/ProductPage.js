@@ -16,7 +16,7 @@ const ProductPage = (props) => {
     return (
         <div className="flex flex-col w-[100%] ">
             <div className=" flex flex-col w-[100%] items-center justify-center py-10 bg-[#FAFAFA]">
-                <div className=" flex w-[95%] items-center justify-start">
+                <div className=" flex w-[95%] items-center justify-start ozel:justify-center">
                     <div className="flex items-center">
                         <p className="text-[#252B42] font-bold">Home</p>
 
@@ -42,13 +42,13 @@ const ProductPage = (props) => {
             </div>
 
             <div className=" flex flex-col w-[100%] items-center justify-start py-10 bg-[#FAFAFA]   ">
-                <div className="  flex gap-7 w-[55%] items-start justify-start    ">
+                <div className="  flex gap-7 w-[55%] items-start justify-start ozel:flex-col ozel:justify-center   ">
 
-                    <div className="w-[50%]">
+                    <div className="w-[50%] ozel:w-[100%]">
                         <ProductSlider data={data} />
                     </div>
 
-                    <div className="w-[50%] flex flex-col gap-6 p-2 justify-start items-start">
+                    <div className="w-[50%] ozel:w-[100%] flex flex-col gap-6 p-2 justify-start items-start">
                         <p className=" text-[#252B42] font-bold text-xl">{data.title}</p>
                         <div className=" flex gap-2 text-[#737373] text-sm items-center">
                             <img src={data.stars} />
@@ -69,7 +69,7 @@ const ProductPage = (props) => {
                         <div>
                             <img src={data.colorProduct} />
                         </div>
-                        <div className=" flex gap-6 items-center">
+                        <div className=" flex gap-6 items-center ozel:flex-col ozel:items-start">
                             <button className=" bg-[#23A6F0] rounded-[3px] text-white py-3 px-6 font-bold hover:scale-[.95]">Select Options</button>
 
                             <div className=" flex gap-4 text-black items-center justify-center">
@@ -93,13 +93,13 @@ const ProductPage = (props) => {
                     <p className=" text-[#737373] text-sm">Additional Information</p>
                     <p className=" text-[#737373] text-sm">Reviews<span className="text-[#23856D]">(0)</span></p>
                 </div>
-                <div className=" flex w-[70%] gap-3 my-10">
+                <div className=" flex w-[70%] gap-3 my-10 ozel:flex-col ozel:items-center">
                     <div className=" flex-1">
                         <img src="/img/unsplash.png " />
                     </div>
 
-                    <div className=" flex flex-1 flex-col gap-5">
-                        <p className=" font-bold text-[#252B42] text-2xl">the quick fox jumps over </p>
+                    <div className=" flex flex-1 flex-col gap-5 ozel:text-center">
+                        <p className=" font-bold text-[#252B42] text-2xl ">the quick fox jumps over </p>
                         <p className=" text-sm text-[#737373] ">Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.</p>
                         <p className=" text-sm text-[#737373] ">Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.</p>
                         <p className=" text-sm text-[#737373] ">Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.</p>

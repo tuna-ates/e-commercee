@@ -6,7 +6,7 @@ const Team = () => {
         <div className=" w-[100%] flex items-center justify-center flex-col py-14">
             <div className=" flex flex-col items-center justify-center gap-3">
                 <p className="text-[#737373]">WHAT WE DO</p>
-                <p className=" text-[#252B42] text-[58px] font-bold">Innovation tailored for you</p>
+                <p className=" text-[#252B42] text-[58px] font-bold ozel:text-[35px] ozel:w-[70%] ozel:text-center">Innovation tailored for you</p>
                 <div className=" flex flex-col w-[100%] items-center justify-center py-10 ">
                     <div className=" flex w-[95%] items-center justify-center">
                         <div className="flex items-center ">
@@ -33,15 +33,15 @@ const Team = () => {
                     </div>
                 </div>
             </div>
-            <div className=" w-[100%] flex gap-2 p-1">
+            <div className=" w-[100%] flex gap-2 p-1 ozel:flex-col ">
                 <div className=" flex-1">
                     <img className="w-[100%] hover:scale-[.98] cursor-pointer" src="./img/unsplash3.png" />
                 </div>
-                <div className=" flex gap-2 flex-wrap flex-1">
-                    <img className=" hover:scale-[.98] cursor-pointer" src="./img/unsplash4.png" />
-                    <img className=" hover:scale-[.98] cursor-pointer" src="./img/unsplash5.png" />
-                    <img className=" hover:scale-[.98] cursor-pointer" src="./img/unsplash6.png" />
-                    <img className=" hover:scale-[.98] cursor-pointer" src="./img/unsplash7.png" />
+                <div className=" flex gap-2 flex-wrap flex-1 ozel:w-[100%] ozel:items-center ozel:justify-center">
+                    <img className=" ozel:w-[45%] hover:scale-[.98] cursor-pointer" src="./img/unsplash4.png" />
+                    <img className=" ozel:w-[45%] hover:scale-[.98] cursor-pointer" src="./img/unsplash5.png" />
+                    <img className=" ozel:w-[45%] hover:scale-[.98] cursor-pointer" src="./img/unsplash6.png" />
+                    <img className=" ozel:w-[45%] hover:scale-[.98] cursor-pointer" src="./img/unsplash7.png" />
                 </div>
             </div>
             <div className="w-[80%] flex flex-col items-center justify-center py-10">
@@ -49,8 +49,8 @@ const Team = () => {
                 <TeamCards />
             </div>
             <div className="w-[80%] flex justify-center items-center flex-col gap-6 py-24">
-                <div className=" flex flex-col gap-5 items-center justify-center">
-                    <p className=" text-[40px] font-bold text-[#252B42] ">Start your 14 days free trial</p>
+                <div className=" flex flex-col gap-5 items-center justify-center ozel:text-center ">
+                    <p className=" text-[40px] font-bold text-[#252B42] ozel:text-center ">Start your 14 days free trial</p>
                     <div className=" flex gap-1 flex-col items-center justify-center">
                         <p className=" text-sm text-[#737373] ">Met minim Mollie non desert Alamo est sit cliquey dolor </p>
                         <p className=" text-sm text-[#737373]">do met sent. RELIT official consequent.</p>

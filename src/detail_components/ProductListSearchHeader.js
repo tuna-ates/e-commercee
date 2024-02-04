@@ -7,9 +7,9 @@ const ProductListSearchHeader = () => {
   }
   return (
     <div className=" flex w-[100%] items-center justify-center py-20">
-      <div className=" flex w-[80%] justify-between items-center ">
-        <p className="text-[#737373]">Showing all 12 results</p>
-        <div className="flex gap-4 items-center">
+      <div className=" flex w-[80%] justify-between items-center ozel:flex-col ozel:gap-5 ">
+        <p className="text-[#737373] ozel:text-lg">Showing all 12 results</p>
+        <div className="flex gap-4 items-center ozel:gap-8">
           <p className="text-[#737373]">Views:</p>
           <button className=" border-solid border-[#aaa9a968] border-2 rounded-sm p-1">
             <svg
