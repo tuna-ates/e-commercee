@@ -1,13 +1,18 @@
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 import MainDropdown from "../detail_components/MainDropdown";
-import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import { NavLink, useHistory } from "react-router-dom";
 
 
 const Header = () => {
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
 
+  const history=useHistory();
+
+  const pushSignup=()=>{
+        history.push("/signup");
+  }
 
   return (
     <div className=" flex  flex-col " >
@@ -133,7 +138,7 @@ const Header = () => {
             <Icon icon="mdi:person-outline" />
             <p className="cursor-pointer hover:scale-[0.9] text-base ozel3:text-sm">Login</p>
             /
-            <p className="cursor-pointer hover:scale-[0.9] text-base ozel3:text-sm" >Register</p>
+            <p className="cursor-pointer hover:scale-[0.9] text-base ozel3:text-sm " onClick={pushSignup} >Register</p>
           </div>
           <div className="flex gap-5 items-center text-[#23A6F0] ozel3:gap-3   font-bold ">
             <div>

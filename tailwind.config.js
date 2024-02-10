@@ -21,7 +21,7 @@ module.exports = withMT({
 
         'sm': { 'max': '639px' },
         // => @media (max-width: 639px) { ... }
-        'ozel': { 'min': '300px', 'max': '950px' },
+        'ozel': { 'min': '250px', 'max': '950px' },
         'ozel2': { 'min': '767px', 'max': '1080px' },
         'ozel3': { 'min': '950px', 'max': '1080px' },
       }
