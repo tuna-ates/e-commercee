@@ -6,10 +6,10 @@ const ProductCards = () => {
     return (
            
             <div className="flex gap-9 flex-wrap w-[90%] justify-center ozel:flex-col">
-                {data.map((item) => {
+                {data.map((item,index) => {
                     return <>
 
-                        <ProductCard item={item} />
+                        <ProductCard key={index} item={item} />
                     </>
 
                 })}

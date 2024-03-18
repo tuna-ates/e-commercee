@@ -1,7 +1,17 @@
 import { Input } from '@material-tailwind/react';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom/';
+import { toast } from 'react-toastify';
+
+
+
+import 'react-toastify/dist/ReactToastify.css';
+import { UserActions } from '../store/reducers/userReducer';
+import { loginUserActionCreator } from '../store/actions/userActions';
+import { globalActionCreator } from '../store/actions/globalActions';
 
 const initialObject = {
     role: ""
@@ -9,12 +19,15 @@ const initialObject = {
 
 const SignUp = () => {
     const [selectData, setSelectData] = useState();
+    //const selectData1 = useSelector(store => store.global.roles);
     const PWD_REGEX = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])([^\s]){8,123}$/
     const TAX_ID = /[T]\d{4}[V]\d{4}$/
     const TR_IBAN = /[TR]\d{26}/
     const TR_NUMBER = /^(((\+|00)?(90)|0)[-| ]?)?((5\d{2})[-| ]?(\d{3})[-| ]?(\d{2})[-| ]?(\d{2}))$/gm
     const baseURL = "https://workintech-fe-ecommerce.onrender.com";
     const [data, setData] = useState("")
+    const history = useHistory();
+    const dispatch = useDispatch();
     const {
         register,
         handleSubmit,
@@ -24,47 +37,69 @@ const SignUp = () => {
             email: "",
             password: "",
             confirmPassword: "",
-            firstName: "",
+            name: "",
             lastName: "",
             phone: "",
             storePhone: "",
             storeName: "",
             taxId: "",
-            ıbanNo: ""
+            ıbanNo: "",
+            role_id: ""
 
         },
         mode: "all"
 
     })
-    const watchMysel = watch("role")
+    const watchMysel = watch("role_id")
     useEffect(() => {
         const filtraPavimento = () => {
             console.log('mysel value', watchMysel);
         }
         filtraPavimento()
     }, [watchMysel]);
-    useEffect(() => {
-        axios.get(baseURL + "/roles")
-            .then((res) => {
-                console.log("data1:", res.data);
-                setSelectData(res.data)
 
+
+    useEffect(() => {
+
+        axios.get("https://workintech-fe-ecommerce.onrender.com/roles")
+            .then((res) => {
+                setSelectData(res.data)
+                //dispatch({ type: GlobalActions.setGlobalRoles, payload: res.data })
             })
+            .catch((err) => {
+                console.log(err.message);
+            })
+
+
     }, [])
 
     const SubmitHandle = (formData) => {
-        console.log("form submit edildi:", formData);
+
+        const requestData = {
+            name: formData.name,
+            email: formData.email,
+            password: formData.password,
+            role_id:formData.role_id
+        }
+        axios.post("https://workintech-fe-ecommerce.onrender.com/signup", requestData)
+            .then((res) => {
+                console.log("form submit edildi", res.data);
+            }).catch((err) => {
+                console.log(err.message);
+                console.log("frommmmmmm",requestData);
+            })
+        //dispatch(loginUserActionCreator(formData))
 
     }
 
 
     return <div className=' my-16'>
-        <form className="max-w-md mx-auto" onSubmit={handleSubmit(SubmitHandle)}>
+        <form className="max-w-md mx-auto flex flex-col" onSubmit={handleSubmit(SubmitHandle)}>
 
             <div className="relative z-0 w-full mb-5 group">
                 <input type="email" name="floating_email" id="floating_email" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "
                     {...register("email", { required: "Email alanı boş bırakılamaz!", email: "Email hatalı!" })} />
-                <label htmlFor="floating_email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
+                <label htmlFor="floating_email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address </label>
                 <div className=' text-xs text-red-500'>{errors?.email?.message}</div>
             </div>
 
@@ -89,10 +124,11 @@ const SignUp = () => {
                 <label htmlFor="floating_repeat_password" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm password</label>
                 <div className=' text-xs text-red-500'>{errors?.confirmPassword?.message}</div>
             </div>
+
             <div className="grid md:grid-cols-2 md:gap-6">
                 <div className="relative z-0 w-full mb-5 group">
                     <input type="text" name="floating_first_name" id="floating_first_name" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "
-                        {...register("firstName", {
+                        {...register("name", {
                             required: "isim alanı en az 3 karakterden oluşmalıdır!", minLength: {
                                 value: 3,
                                 message: "Şifre alanı 3 karakterden az olamaz!",
@@ -121,18 +157,22 @@ const SignUp = () => {
 
                 <div className="relative z-0 w-full mb-5 group">
                     <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-500 dark:text-white">Role</label>
+
                     <select id="countries" className="bg-gray-50 border border-gray-300
                      text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
                       dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
-                       dark:focus:border-blue-500"  {...register("role", { validate: (value) => value !== "0" })}>
+                       dark:focus:border-blue-500"  {...register("role_id", { validate: (value) => value !== "0" })}>
+
                         <option value={selectData && selectData[2].name}>{selectData && selectData[2].name}</option>
                         {selectData && selectData.map((data, index) => {
-                            { return index < 2 ? <option value={data.name} key={data.id}>{data.name}</option> : null }
+                            { return index < 2 ? <option value={data.id} key={data.id}>{data.name}</option> : null }
                         })}
                     </select>
+
+
                 </div>
                 {
-                    watchMysel == "Mağaza" && <div>
+                    watchMysel == "2" && <div>
                         <div className="relative z-0 w-full mb-5 group">
                             <input type="text" name="floating_first_name" id="floating_first_name" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "
                                 {...register("storeName", {

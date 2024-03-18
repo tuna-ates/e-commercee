@@ -9,6 +9,7 @@ import AboutPage from "../pages/AboutPage";
 import Team from "../pages/Team";
 import ContactPage from "../pages/ContactPage";
 import SignUp from "../pages/SignUp";
+import LoginPage from "../pages/LoginPage";
 
 
 const PageContent = () => {
@@ -37,6 +38,9 @@ const PageContent = () => {
             </Route>
             <Route path="/signup" exact>
                 <SignUp />
+            </Route>
+            <Route path="/login" exact>
+                <LoginPage />
             </Route>
             <Route path="*" exact>
                 <h1>404 Sayfa Bulunamdı</h1>
