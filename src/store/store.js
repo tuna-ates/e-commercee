@@ -10,10 +10,12 @@ import { thunk } from "redux-thunk";
 import { productReducer } from "./reducers/productReducer";
 import { storeReducer } from "./reducers/storeReducer";
 import { shoppingCardReducer } from "./reducers/shoppingCardReducer";
+import { loginReducer } from "./reducers/loginReducer";
 
 export const reducers = combineReducers({
     global: globalReducer,
     user: userReducer,
+    login:loginReducer,
     product:productReducer,
     store:storeReducer,
     shoppingCard:shoppingCardReducer

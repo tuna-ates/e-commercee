@@ -12,6 +12,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { UserActions } from '../store/reducers/userReducer';
 import { loginUserActionCreator } from '../store/actions/userActions';
 import { globalActionCreator } from '../store/actions/globalActions';
+import { StoreActions } from '../store/reducers/storeReducer';
+import { FetchStates } from '../store/reducers/globalReducer';
 
 const initialObject = {
     role: ""
@@ -79,16 +81,30 @@ const SignUp = () => {
             name: formData.name,
             email: formData.email,
             password: formData.password,
-            role_id:formData.role_id
+            role_id: formData.role_id
         }
         axios.post("https://workintech-fe-ecommerce.onrender.com/signup", requestData)
+               dispatch({type:UserActions.setUserFetchState,payload:FetchStates.fetching})
             .then((res) => {
                 console.log("form submit edildi", res.data);
+                dispatch({type:UserActions.setUsers,payload:requestData})
+                dispatch({ type: UserActions.setUsetFirstname, payload: formData.name });
+                dispatch({ type: UserActions.setUserLastname, payload: formData.lastName });
+                dispatch({ type: UserActions.setUserEmail, payload: formData.email });
+                dispatch({ type: UserActions.setUserPhone, payload: formData.phone });
+                dispatch({ type: UserActions.setUserRole, payload: formData.role_id });
+                dispatch({ type: StoreActions.setStoreName, payload: formData.storeName });
+                dispatch({ type: StoreActions.setStorePhone, payload: formData.storePhone });
+                dispatch({ type: StoreActions.setTaxtId, payload: formData.taxId });
+                dispatch({ type: StoreActions.setIbanNo, payload: formData.ıbanNo });
+                dispatch({type:UserActions.setUserFetchState,paylod:FetchStates.fetched})
+                history.push("/")
             }).catch((err) => {
                 console.log(err.message);
-                console.log("frommmmmmm",requestData);
+                console.log("frommmmmmm", requestData);
+                dispatch({type:UserActions.setUserFetchState,payload:FetchStates.failed})
             })
-        //dispatch(loginUserActionCreator(formData))
+        //dispatch(loginUserActionCreator(requestData))
 
     }
 

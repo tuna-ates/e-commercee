@@ -12,11 +12,11 @@ export const loginUserActionCreator = (formData) => (dispatch, getState) => {
             dispatch({ type: UserActions.setUserLastname, payload: formData.lastName });
             dispatch({ type: UserActions.setUserEmail, payload: formData.email });
             dispatch({ type: UserActions.setUserPhone, payload: formData.phone });
-            dispatch({ type: UserActions.setUserRole, payload: formData.role });
-            dispatch({ type: UserActions.setStoreName, payload: formData.storeName });
-            dispatch({ type: UserActions.setStorePhone, payload: formData.storePhone });
-            dispatch({ type: UserActions.setTaxtId, payload: formData.taxId });
-            dispatch({ type: UserActions.setIbanNo, payload: formData.ıbanNo });
+            dispatch({ type: UserActions.setUserRole, payload: formData.role_id });
+             dispatch({ type: UserActions.setStoreName, payload: formData.storeName });
+             dispatch({ type: UserActions.setStorePhone, payload: formData.storePhone });
+             dispatch({ type: UserActions.setTaxtId, payload: formData.taxId });
+             dispatch({ type: UserActions.setIbanNo, payload: formData.ıbanNo });
 
             toast.info('Hesabınızı aktifleştirmek için e-postadaki bağlantıya tıklayınız', {
                 position: "top-right",

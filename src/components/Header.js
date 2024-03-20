@@ -1,14 +1,18 @@
 import { Icon } from "@iconify/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MainDropdown from "../detail_components/MainDropdown";
 import { NavLink, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { store } from "../store/store";
+import { FetchStates } from "../store/reducers/globalReducer";
+import Gravatar from "react-gravatar";
 
 
 const Header = () => {
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
-  const deneme = useSelector(store => store.user.name)
+  const email = useSelector(store => store.user.email)
+  const fetchStatus = useSelector(store => store.user.fetchState)
   const history = useHistory();
 
   const pushSignup = () => {
@@ -124,7 +128,6 @@ const Header = () => {
         <div className="flex justify-between ozel:my-6   ">
           <div className="flex gap-6 ozel3:gap-2 ozel3:text-base ozel:text-2xl text-lg  text-[#737373] font-bold items-center md:flex-col md:items-center md:justify-center    ">
             <a ><NavLink className="nav-link" to="/" exact>Home</NavLink></a>
-            <a ><NavLink className="nav-link" to="/" exact>---{deneme}--</NavLink></a>
             <a className="flex items-center gap-1">
               <NavLink className="nav-link" to="/productList" exact>Shop</NavLink>
 
@@ -141,10 +144,13 @@ const Header = () => {
         </div>
         <div className="flex justify-end gap-6 md:hidden ozel3:gap-1 ">
           <div className="flex items-center text-[#23A6F0] text-sm font-bold gap-1">
-            <Icon icon="mdi:person-outline" />
-            <p className="cursor-pointer hover:scale-[0.9] text-base ozel3:text-sm" onClick={pushLogin}>Login</p>
-            /
-            <p className="cursor-pointer hover:scale-[0.9] text-base ozel3:text-sm " onClick={pushSignup} >Register</p>
+            {fetchStatus == FetchStates.fetched ? <><p className="cursor-pointer hover:scale-[0.9] text-[#3079a3] text-base ozel3:text-sm mr-3">{email}</p> <Gravatar className="rounded-lg mr-10" email={email} size={30} /> </> : <>
+              <Icon icon="mdi:person-outline" />
+              <p className="cursor-pointer hover:scale-[0.9] text-base ozel3:text-sm" onClick={pushLogin}>Login</p>
+              /
+              <p className="cursor-pointer hover:scale-[0.9] text-base ozel3:text-sm " onClick={pushSignup} >Register</p>
+            </>}
+
           </div>
           <div className="flex gap-5 items-center text-[#23A6F0] ozel3:gap-3   font-bold ">
             <div>
