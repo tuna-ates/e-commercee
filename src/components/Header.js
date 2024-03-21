@@ -13,7 +13,10 @@ const Header = () => {
   const [show1, setShow1] = useState(false);
   const email = useSelector(store => store.user.email)
   const fetchStatus = useSelector(store => store.user.fetchState)
+  const emailStatus = localStorage.getItem("user-email");
   const history = useHistory();
+
+
 
   const pushSignup = () => {
     history.push("/signup");
@@ -144,12 +147,27 @@ const Header = () => {
         </div>
         <div className="flex justify-end gap-6 md:hidden ozel3:gap-1 ">
           <div className="flex items-center text-[#23A6F0] text-sm font-bold gap-1">
-            {fetchStatus == FetchStates.fetched ? <><p className="cursor-pointer hover:scale-[0.9] text-[#3079a3] text-base ozel3:text-sm mr-3">{email}</p> <Gravatar className="rounded-lg mr-10" email={email} size={30} /> </> : <>
+            {/* {fetchStatus == FetchStates.fetched && emailStatus ? <><p className="cursor-pointer hover:scale-[0.9] text-[#3079a3] text-base ozel3:text-sm mr-3">{email}</p> <Gravatar className="rounded-lg mr-10" email={email} size={30} /> </> :
+              <>
+                <Icon icon="mdi:person-outline" />
+                <p className="cursor-pointer hover:scale-[0.9] text-base ozel3:text-sm" onClick={pushLogin}>Login</p>
+                /
+                <p className="cursor-pointer hover:scale-[0.9] text-base ozel3:text-sm " onClick={pushSignup} >Register</p>
+              </>} */}
+
+
+            {emailStatus && <><p className="cursor-pointer hover:scale-[0.9] text-[#3079a3] text-base ozel3:text-sm mr-3">{emailStatus}</p>
+              <Gravatar className="rounded-lg mr-10" email={email} size={30} /> </>}
+
+            {!emailStatus && <>
               <Icon icon="mdi:person-outline" />
               <p className="cursor-pointer hover:scale-[0.9] text-base ozel3:text-sm" onClick={pushLogin}>Login</p>
               /
               <p className="cursor-pointer hover:scale-[0.9] text-base ozel3:text-sm " onClick={pushSignup} >Register</p>
             </>}
+
+
+
 
           </div>
           <div className="flex gap-5 items-center text-[#23A6F0] ozel3:gap-3   font-bold ">

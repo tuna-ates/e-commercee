@@ -23,6 +23,7 @@ const LoginPage = () => {
     const PWD_REGEX = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])([^\s]){8,123}$/
     const dispatch = useDispatch();
     const submitHandle = (formData) => {
+        
         dispatch(loginActionCreator(formData));
         console.log("denemee", fetchStatus);
 

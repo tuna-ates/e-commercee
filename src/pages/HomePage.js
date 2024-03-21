@@ -7,12 +7,21 @@ import Services from "../detail_components/Services";
 import FeaturedPosts from "../detail_components/FeaturedPosts";
 import CarouselComponent from "../detail_components/CarouselComponent";
 import CarouselComponent2 from "../detail_components/CarouselComponent2";
+import { useEffect } from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 
 const HomePage = () => {
+  const history = useHistory();
+  const emailStatus = localStorage.getItem("user-email");
+
+
+
+
+
   return (
     <>
-    <CarouselComponent2/>
+      <CarouselComponent2 />
 
       <Brands />
       <TopWeeks />

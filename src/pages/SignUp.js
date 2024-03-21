@@ -83,11 +83,11 @@ const SignUp = () => {
             password: formData.password,
             role_id: formData.role_id
         }
+        dispatch({ type: UserActions.setUserFetchState, payload: FetchStates.fetching })
         axios.post("https://workintech-fe-ecommerce.onrender.com/signup", requestData)
-               dispatch({type:UserActions.setUserFetchState,payload:FetchStates.fetching})
+           
             .then((res) => {
                 console.log("form submit edildi", res.data);
-                dispatch({type:UserActions.setUsers,payload:requestData})
                 dispatch({ type: UserActions.setUsetFirstname, payload: formData.name });
                 dispatch({ type: UserActions.setUserLastname, payload: formData.lastName });
                 dispatch({ type: UserActions.setUserEmail, payload: formData.email });
@@ -97,12 +97,12 @@ const SignUp = () => {
                 dispatch({ type: StoreActions.setStorePhone, payload: formData.storePhone });
                 dispatch({ type: StoreActions.setTaxtId, payload: formData.taxId });
                 dispatch({ type: StoreActions.setIbanNo, payload: formData.ıbanNo });
-                dispatch({type:UserActions.setUserFetchState,paylod:FetchStates.fetched})
+                dispatch({ type: UserActions.setUserFetchState, paylod: FetchStates.fetched })
                 history.push("/")
             }).catch((err) => {
                 console.log(err.message);
                 console.log("frommmmmmm", requestData);
-                dispatch({type:UserActions.setUserFetchState,payload:FetchStates.failed})
+                dispatch({ type: UserActions.setUserFetchState, payload: FetchStates.failed })
             })
         //dispatch(loginUserActionCreator(requestData))
 
