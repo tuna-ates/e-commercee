@@ -8,7 +8,8 @@ export const UserActions = {
     setUserPhone: "SET_USER_PHONE",
     setUserRole: "SET_USER_ROLE",
     setUserFetchState: "SET_FETCH_STATE",
-    setLocalStorage: "SET_LOCAL_STORAGE"
+    setLoginUser: "SET_LOGİN_USER",
+    setToken: "SET_TOKEN"
 
 }
 
@@ -19,7 +20,8 @@ export const userInitial = {
     phone: "",
     role: "",
     fetchState: FetchStates.notFetched,
-    localStorage: ""
+    login: FetchStates.logdin,
+    token: ""
 
 }
 
@@ -28,11 +30,11 @@ export const userReducer = (state = userInitial, action) => {
     switch (action.type) {
 
         case UserActions.setUserEmail:
-            localStorage.setItem("user-email", action.payload);
             return { ...state, email: action.payload }
             break;
 
         case UserActions.setUsetFirstname:
+            localStorage.setItem("name",action.payload)
             return { ...state, firstName: action.payload }
             break;
 
@@ -52,7 +54,14 @@ export const userReducer = (state = userInitial, action) => {
             return { ...state, fetchState: action.payload }
             break;
 
+        case UserActions.setToken:
+            localStorage.setItem("token", action.payload)
+            return { ...state, token: action.payload }
+            break;
 
+        case UserActions.setLoginUser:
+            return { ...state, login: action.payload }
+            break;
 
         default:
             return state;

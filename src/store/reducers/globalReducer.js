@@ -4,6 +4,7 @@ export const FetchStates = {
     fetching: "FETCHING",
     fetched: "FETCHED",
     failed: "FETCH_FAILED",
+    logdin:false
 }
 
 export const GlobalActions = {

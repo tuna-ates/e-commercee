@@ -11,9 +11,11 @@ import Gravatar from "react-gravatar";
 const Header = () => {
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
-  const email = useSelector(store => store.user.email)
-  const fetchStatus = useSelector(store => store.user.fetchState)
-  const emailStatus = localStorage.getItem("user-email");
+  //const name = useSelector(store => store.user.firstName)
+  const name = localStorage.getItem("name")
+  //const fetchStatus = useSelector(store => store.user.fetchState)
+  const tokenStatus = localStorage.getItem("token");
+  const logdin = useSelector(store => store.user.login)
   const history = useHistory();
 
 
@@ -156,15 +158,27 @@ const Header = () => {
               </>} */}
 
 
-            {emailStatus && <><p className="cursor-pointer hover:scale-[0.9] text-[#3079a3] text-base ozel3:text-sm mr-3">{emailStatus}</p>
-              <Gravatar className="rounded-lg mr-10" email={email} size={30} /> </>}
+             {tokenStatus && <><p className="cursor-pointer hover:scale-[0.9] text-[#3079a3] text-base ozel3:text-sm mr-3">{name}</p>
+              <Gravatar className="rounded-lg mr-10" email={name} size={30} /> </>}
 
-            {!emailStatus && <>
+            {!tokenStatus && <>
               <Icon icon="mdi:person-outline" />
               <p className="cursor-pointer hover:scale-[0.9] text-base ozel3:text-sm" onClick={pushLogin}>Login</p>
               /
               <p className="cursor-pointer hover:scale-[0.9] text-base ozel3:text-sm " onClick={pushSignup} >Register</p>
-            </>}
+            </>} 
+
+            {/* {
+              logdin == true ? <><p className="cursor-pointer hover:scale-[0.9] text-[#3079a3] text-base ozel3:text-sm mr-3">{name}</p>
+                <Gravatar className="rounded-lg mr-10" email={name} size={30} /> </> :
+
+                <>
+                  <Icon icon="mdi:person-outline" />
+                  <p className="cursor-pointer hover:scale-[0.9] text-base ozel3:text-sm" onClick={pushLogin}>Login</p>
+                  /
+                  <p className="cursor-pointer hover:scale-[0.9] text-base ozel3:text-sm " onClick={pushSignup} >Register</p>
+                </>
+            } */}
 
 
 

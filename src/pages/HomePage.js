@@ -9,20 +9,56 @@ import CarouselComponent from "../detail_components/CarouselComponent";
 import CarouselComponent2 from "../detail_components/CarouselComponent2";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import useAxiosInstance from "../hooks/useAxiosInstance";
+import { useDispatch, useSelector } from "react-redux";
+import { UserActions } from "../store/reducers/userReducer";
+import { FetchStates } from "../store/reducers/globalReducer";
 
 
 const HomePage = () => {
   const history = useHistory();
   const emailStatus = localStorage.getItem("user-email");
+  const { request, axiosWithAuthInstance } = useAxiosInstance();
+  const token = localStorage.getItem("token")
+  const token1 = useSelector(store => store.user.token)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+
+    if (token != undefined) {
+      axiosWithAuthInstance.get("verify")
+        .then((res) => {
+          console.log(res.data);
+          dispatch({ type: UserActions.setUsetFirstname, payload: res.data.name })
+          dispatch({ type: UserActions.setUserEmail, payload: res.data.email })
+          dispatch({ type: UserActions.setToken, payload: token })
+          dispatch({ type: UserActions.setLoginUser, payload: true })
+        }).catch((err) => {
+          console.log(err.message);
+        })
+    } else {
+      history.push("/login")
+    }
 
 
 
 
+  }, [])
+
+
+  const delete1 = () => {
+    localStorage.removeItem("token")
+    dispatch({ type: UserActions.setUserFetchState, payload: FetchStates.notFetched })
+    window.location.reload();
+    history.push("/login")
+
+  }
 
   return (
     <>
-      <CarouselComponent2 />
 
+      <CarouselComponent2 />
+      <button onClick={delete1}>delete</button>
       <Brands />
       <TopWeeks />
 
@@ -37,6 +73,7 @@ const HomePage = () => {
         </div>
 
         <button className=" font-bold mt-7 hover:opacity-50 py-3 px-8 text-[#23A6F0] border-solid rounded-md border-2 border-[#23A6F0]">LOAD MORE PRODUCTS</button>
+
 
 
       </div>

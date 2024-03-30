@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 const LoginPage = () => {
     const history = useHistory();
     const fetchStatus = useSelector(store => store.login.fetchState)
+    const token = localStorage.getItem("token")
     const { register,
         handleSubmit,
         formState: { errors, isValid } } = useForm({
@@ -23,11 +24,16 @@ const LoginPage = () => {
     const PWD_REGEX = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])([^\s]){8,123}$/
     const dispatch = useDispatch();
     const submitHandle = (formData) => {
-        
+
         dispatch(loginActionCreator(formData));
         console.log("denemee", fetchStatus);
 
     }
+
+    const pushRegister = () => {
+        history.push("/signup")
+    }
+
     useEffect(() => {
         if (fetchStatus == FetchStates.fetched) {
             toast.success('Giriş başarıyla yapıldı!', {
@@ -84,6 +90,7 @@ const LoginPage = () => {
              dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     disabled={!isValid} style={{ background: isValid == true ? "#088BF9" : "#72B6EE" }}
                 >Submit</button>
+                <div className=" mt-6 cursor-pointer hover:scale-[0.98] text-[#088BF9] text-sm " onClick={pushRegister}>Create Account</div>
             </form>
         </div>
     </>

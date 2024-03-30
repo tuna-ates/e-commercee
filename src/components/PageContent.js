@@ -10,17 +10,18 @@ import Team from "../pages/Team";
 import ContactPage from "../pages/ContactPage";
 import SignUp from "../pages/SignUp";
 import LoginPage from "../pages/LoginPage";
+import PrivateRoute from "./PrivateRoute";
 
 
 const PageContent = () => {
     return <>
         <Switch>
-            <Route path="/" exact>
+            <PrivateRoute path="/" exact>
                 <HomePage />
-            </Route>
-            <Route path="/homePage" exact>
+            </PrivateRoute>
+            <PrivateRoute path="/homePage" exact>
                 <HomePage />
-            </Route>
+            </PrivateRoute>
             <Route path="/productList" exact>
                 <ProductListPage />
             </Route>
