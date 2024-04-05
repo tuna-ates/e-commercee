@@ -46,20 +46,16 @@ const HomePage = () => {
   }, [])
 
 
-  const delete1 = () => {
-    localStorage.removeItem("token")
-    dispatch({ type: UserActions.setUserFetchState, payload: FetchStates.notFetched })
-    window.location.reload();
-    history.push("/login")
-
-  }
+  
 
   return (
     <>
 
       <CarouselComponent2 />
-      <button onClick={delete1}>delete</button>
+
+  
       <Brands />
+
       <TopWeeks />
 
       <div className="flex w-[100%] flex-col gap-10 items-center justify-center py-20">

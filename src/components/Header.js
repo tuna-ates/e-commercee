@@ -2,23 +2,41 @@ import { Icon } from "@iconify/react";
 import { useEffect, useState } from "react";
 import MainDropdown from "../detail_components/MainDropdown";
 import { NavLink, useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { store } from "../store/store";
 import { FetchStates } from "../store/reducers/globalReducer";
 import Gravatar from "react-gravatar";
+import LogOutDropDown from "../detail_components/LogOutDropDownd";
+import { Menu } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { UserActions } from "../store/reducers/userReducer";
 
 
 const Header = () => {
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
+  const [show2, setShow2] = useState(false)
   //const name = useSelector(store => store.user.firstName)
   const name = localStorage.getItem("name")
   //const fetchStatus = useSelector(store => store.user.fetchState)
   const tokenStatus = localStorage.getItem("token");
   const logdin = useSelector(store => store.user.login)
   const history = useHistory();
+  const dispatch=useDispatch();
+
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+  }
 
 
+  const logOut = () => {
+    localStorage.removeItem("token")
+    localStorage.removeItem("name")
+    dispatch({ type: UserActions.setUserFetchState, payload: FetchStates.notFetched })
+    window.location.reload();
+    history.push("/login")
+
+  }
 
   const pushSignup = () => {
     history.push("/signup");
@@ -28,8 +46,13 @@ const Header = () => {
     history.push("/login")
   }
 
+  const logOutSet = () => {
+    setShow2(!show2)
+  }
+
   return (
     <div className=" flex  flex-col " >
+
       <div className=" md:hidden darkHeader bg-[#252B42]  w-[100%] py-3 flex justify-between px-8">
 
         <div className=" text-white flex items-center gap-4  ">
@@ -37,7 +60,7 @@ const Header = () => {
             <div>
               <Icon icon="iconoir:phone" />
             </div>
-            <p>(225) 555-0118</p>
+            <p >(225) 555-0118</p>
           </div>
           <div className="flex items-center ">
             <Icon icon="uiw:mail-o" />
@@ -157,16 +180,29 @@ const Header = () => {
                 <p className="cursor-pointer hover:scale-[0.9] text-base ozel3:text-sm " onClick={pushSignup} >Register</p>
               </>} */}
 
+            <div className=" flex">
+              {tokenStatus && <><p className="cursor-pointer hover:scale-[0.9] text-[#3079a3] text-base ozel3:text-sm mr-3" onClick={logOutSet}>{name}</p>
+                <Gravatar className="rounded-lg mr-10" email={name} size={30} /> </>}
+              <div className=" relative">{show2 &&
+                <Menu>
+                  <div>
+                    <Menu.Button onClick={logOut} className="  absolute right-16 top-5 z-10 mt-2 border-transparent   inline-flex   justify-center items-center gap-2 rounded-md bg-blue-gray-500  px-3 py-2 text-base font-semibold text-gray-100 shadow-sm hover:   hover:bg-blue-gray-300 ">
 
-             {tokenStatus && <><p className="cursor-pointer hover:scale-[0.9] text-[#3079a3] text-base ozel3:text-sm mr-3">{name}</p>
-              <Gravatar className="rounded-lg mr-10" email={name} size={30} /> </>}
+                      <p>LogOut</p> <div><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.3em" viewBox="0 0 24 24" ><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h7v2zm11-4l-1.375-1.45l2.55-2.55H9v-2h8.175l-2.55-2.55L16 7l5 5z"></path></svg></div>
+                    </Menu.Button>
+                  </div>
+
+                </Menu>
+              }
+              </div>
+            </div>
 
             {!tokenStatus && <>
               <Icon icon="mdi:person-outline" />
               <p className="cursor-pointer hover:scale-[0.9] text-base ozel3:text-sm" onClick={pushLogin}>Login</p>
               /
               <p className="cursor-pointer hover:scale-[0.9] text-base ozel3:text-sm " onClick={pushSignup} >Register</p>
-            </>} 
+            </>}
 
             {/* {
               logdin == true ? <><p className="cursor-pointer hover:scale-[0.9] text-[#3079a3] text-base ozel3:text-sm mr-3">{name}</p>

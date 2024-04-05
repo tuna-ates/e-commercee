@@ -22,21 +22,21 @@ const PageContent = () => {
             <PrivateRoute path="/homePage" exact>
                 <HomePage />
             </PrivateRoute>
-            <Route path="/productList" exact>
+            <PrivateRoute path="/productList" exact>
                 <ProductListPage />
-            </Route>
-            <Route path="/productList/:productId" exact>
+            </PrivateRoute>
+            <PrivateRoute path="/productList/:productId" exact>
                 <ProductPage />
-            </Route>
-            <Route path="/about" exact>
+            </PrivateRoute>
+            <PrivateRoute path="/about" exact>
                 <AboutPage />
-            </Route>
-            <Route path="/team" exact>
+            </PrivateRoute>
+            <PrivateRoute path="/team" exact>
                 <Team />
-            </Route>
-            <Route path="/contact" exact>
+            </PrivateRoute>
+            <PrivateRoute path="/contact" exact>
                 <ContactPage />
-            </Route>
+            </PrivateRoute>
             <Route path="/signup" exact>
                 <SignUp />
             </Route>
